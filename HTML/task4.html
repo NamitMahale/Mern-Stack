@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-container {
+            padding: 20px;
+            width: fit-content;
+        }
+        .form-container label {
+            display: inline-block;
+            width: 120px;
+            font-weight: bold;
+        }
+        .form-container input {
+            margin-bottom: 10px;
+        }
+        .form-container p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <form>
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" value="Vincent Maverick Durano" readonly><br>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" value="Vinz" readonly><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" value="---" readonly><br>
+
+        <label for="repassword">Re Password:</label>
+        <input type="password" id="repassword" value="---" readonly><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" value="Cebu, Philippines" readonly><br>
+
+        <label for="age">Age:</label>
+        <input type="text" id="age" value="22" readonly><br>
+
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" value="Male" readonly><br>
+
+        <button type="button">Save</button>
+    </form>
+</div>
+
+</body>
+</html>
