@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            display: block;
+            border: 2px solid #007bff;
+        }
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+    <div style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); width: 300px;">
+        <!-- Circular Profile Image -->
+        <img src="profile.png" alt="Profile Image" class="profile-img">
+        
+        <form>
+            <div style="margin-bottom: 15px;">
+                <label for="username" style="display: block; margin-bottom: 5px; font-weight: bold;">Username</label>
+                <input type="text" id="username" placeholder="Enter Username" style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="password" style="display: block; margin-bottom: 5px; font-weight: bold;">Password</label>
+                <input type="password" id="password" placeholder="Enter Password" style="width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <input type="checkbox" id="remember" style="margin-right: 5px;">
+                <label for="remember" style="font-size: 14px;">Remember me</label>
+            </div>
+            <button type="submit" style="width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Login</button>
+            <div style="text-align: center; margin-top: 10px;">
+                <a href="#" style="color: #007bff; text-decoration: none; font-size: 14px;">Forgot password?</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
