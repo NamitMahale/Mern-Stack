@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication and Division</title>
+</head>
+<body>
+    <label for="num1">1st Number:</label>
+    <input type="number" id="num1"><br><br>
+    <label for="num2">2nd Number:</label>
+    <input type="number" id="num2"><br><br>
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="divide()">Divide</button><br><br>
+    <p>The Result Is: <span id="result"></span></p>
+
+    <script>
+        function multiply() {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            document.getElementById('result').innerText = num1 * num2;
+        }
+
+        function divide() {
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            document.getElementById('result').innerText = num1 / num2;
+        }
+    </script>
+</body>
+</html>

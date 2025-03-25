@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffdde1, #ee9ca7);
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+            float: right;
+        }
+        .register-button {
+            background: red;
+            color: white;
+            font-size: 16px;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        table {
+            width: 50%;
+            margin: auto;
+        }
+        td {
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="color: blue;">Registration form</h2>
+    <form onsubmit="return validateForm()">
+        <table>
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" id="firstName"><span class="error" id="firstNameError"></span></td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td><input type="text" id="lastName"><span class="error" id="lastNameError"></span></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" id="email"><span class="error" id="emailError"></span></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" id="password"><span class="error" id="passwordError"></span></td>
+            </tr>
+            <tr>
+                <td>Re-enter Password:</td>
+                <td><input type="password" id="rePassword"><span class="error" id="rePasswordError"></span></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <input type="radio" name="gender" value="Male"> Male
+                    <input type="radio" name="gender" value="Female"> Female
+                </td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td><input type="number" id="age"><span class="error" id="ageError"></span></td>
+            </tr>
+            <tr>
+                <td>Phone Number:</td>
+                <td><input type="text" id="phone"><span class="error" id="phoneError"></span></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><textarea id="address"></textarea><span class="error" id="addressError"></span></td>
+            </tr>
+            <tr>
+                <td>State:</td>
+                <td><input type="text" id="state"><span class="error" id="stateError"></span></td>
+            </tr>
+            <tr>
+                <td>Country:</td>
+                <td>
+                    <select id="country">
+                        <option value="">Choose your country</option>
+                        <option value="India">India</option>
+                        <option value="USA">USA</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Languages known:</td>
+                <td>
+                    <input type="checkbox"> English
+                    <input type="checkbox"> Kannada
+                    <input type="checkbox"> Hindi
+                    <input type="checkbox"> Telugu
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" required> Hereby I declare all the given details are true
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="submit" class="register-button">REGISTER</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+    <script>
+        function validateForm() {
+            let valid = true;
+            
+            function setError(id, message) {
+                document.getElementById(id).innerText = message;
+                valid = false;
+            }
+            
+            document.querySelectorAll(".error").forEach(el => el.innerText = "");
+            
+            if (document.getElementById("firstName").value === "") setError("firstNameError", "POOR");
+            if (document.getElementById("lastName").value === "") setError("lastNameError", "POOR");
+            if (document.getElementById("email").value === "") setError("emailError", "POOR");
+            if (document.getElementById("password").value === "") setError("passwordError", "POOR");
+            if (document.getElementById("rePassword").value !== document.getElementById("password").value)
+                setError("rePasswordError", "POOR OR MISMATCH");
+            if (document.getElementById("age").value === "") setError("ageError", "POOR");
+            if (document.getElementById("phone").value === "") setError("phoneError", "POOR");
+            if (document.getElementById("address").value === "") setError("addressError", "POOR");
+            if (document.getElementById("state").value === "") setError("stateError", "POOR");
+            
+            return valid;
+        }
+    </script>
+</body>
+</html>

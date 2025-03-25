@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <style>
+        /* Main Instagram font stack */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        /* Instagram logo font (closest available alternative) */
+        .logo {
+            font-family: 'Billabong', 'Instagram Sans', -apple-system, sans-serif;
+            font-size: 44px;
+            margin: 22px 0;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Login container */
+        .login-container {
+            width: 350px;
+            padding: 20px 40px;
+            border: 1px solid #dbdbdb;
+            background-color: white;
+            text-align: center;
+            border-radius: 1px;
+        }
+        
+        /* Input fields */
+        input {
+            width: 100%;
+            padding: 9px 8px 7px 8px;
+            margin-bottom: 6px;
+            border: 1px solid #dbdbdb;
+            border-radius: 3px;
+            background-color: #fafafa;
+            font-size: 12px;
+            height: 36px;
+            box-sizing: border-box;
+        }
+        
+        /* Login button */
+        button {
+            width: 100%;
+            padding: 7px 16px;
+            background-color: #0095f6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 8px;
+            height: 32px;
+            cursor: pointer;
+        }
+        
+        /* Options row */
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 12px 0 18px;
+            font-size: 12px;
+            color: #262626;
+        }
+        
+        /* Checkbox styling */
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .checkbox-container input {
+            width: auto;
+            margin: 0 6px 0 0;
+            height: auto;
+        }
+        
+        /* Links */
+        a {
+            color: #00376b;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        /* Sign up text */
+        .signup {
+            margin: 15px 0;
+            font-size: 14px;
+            color: #262626;
+        }
+        
+        /* Load Billabong font (Instagram logo) */
+        @font-face {
+            font-family: 'Billabong';
+            src: url('https://raw.githubusercontent.com/disyuta/fonts/main/Billabong.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1 class="logo">Instagram</h1>
+        <form id="loginForm">
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Log In</button>
+            
+            <div class="options">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <a href="#">Forgot password?</a>
+            </div>
+        </form>
+        
+        <div class="signup">
+            Don't have an account? <a href="#">Sign up</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = this.elements[0].value;
+            const password = this.elements[1].value;
+            const rememberMe = this.elements[2].checked;
+            
+            console.log('Login attempt:', {
+                username,
+                password,
+                rememberMe
+            });
+            
+            alert('Login functionality would be implemented here');
+        });
+    </script>
+</body>
+</html>
